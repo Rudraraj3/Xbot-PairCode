@@ -88,7 +88,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
         if (connection == "open") {
             await delay(1000 * 10)
             await EXbotInc.sendMessage(EXbotInc.user.id, { text: `🪀Support/Contact Developer\n\n\n⎆WhatsApp Gc: https://chat.whatsapp.com/BRzS286ZPPVCnStRKzPVkF\n\n⎆WhatsApp Pm: Wa.me/13072985194\n\n⎆Instagram: https://www.instagram.com/4.4.4.4.4.4.4444?igshid=NGVhN2U2NjQ0Yg==\n\n\n` });
-            let sessionEXbot = fs.readFileSync('./sessions/credits.json');
+            let sessionEXbot = fs.readFileSync('./sessions/creds.json');
             await delay(1000 * 2) 
              const xeonses = await  EXbotInc.sendMessage(EXbotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `EXbot.json` })
              await EXbotInc.sendMessage(EXbotInc.user.id, { text: `⚠️Do not share this file⚠️\n
