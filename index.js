@@ -77,21 +77,21 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
       }
 
       setTimeout(async () => {
-         let code = await XeonBotInc.requestPairingCode(phoneNumber)
+         let code = await EXbotInc.requestPairingCode(phoneNumber)
          code = code?.match(/.{1,4}/g)?.join("-") || code
          console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
       }, 3000)
    }
 //------------------------------------------------------
-    XeonBotInc.ev.on("connection.update",async  (s) => {
+    EXbotInc.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10)
-            await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🪀Support/Contact Developer\n\n\n⎆WhatsApp Gc: https://chat.whatsapp.com/BRzS286ZPPVCnStRKzPVkF\n\n⎆WhatsApp Pm: Wa.me/13072985194\n\n⎆Instagram: https://www.instagram.com/4.4.4.4.4.4.4444?igshid=NGVhN2U2NjQ0Yg==\n\n\n` });
-            let sessionXeon = fs.readFileSync('./sessions/creds.json');
+            await EXbotInc.sendMessage(EXbotInc.user.id, { text: `🪀Support/Contact Developer\n\n\n⎆WhatsApp Gc: https://chat.whatsapp.com/BRzS286ZPPVCnStRKzPVkF\n\n⎆WhatsApp Pm: Wa.me/13072985194\n\n⎆Instagram: https://www.instagram.com/4.4.4.4.4.4.4444?igshid=NGVhN2U2NjQ0Yg==\n\n\n` });
+            let sessionEXbot = fs.readFileSync('./sessions/credits.json');
             await delay(1000 * 2) 
-             const xeonses = await  XeonBotInc.sendMessage(XeonBotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `EXbot.json` })
-             await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `⚠️Do not share this file⚠️\n
+             const xeonses = await  EXbotInc.sendMessage(EXbotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `EXbot.json` })
+             await EXbotInc.sendMessage(EXbotInc.user.id, { text: `⚠️Do not share this file⚠️\n
 
 │───────────────────│
 │ hy dear 😽
@@ -102,7 +102,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
 │wa.me/+13072985194
 │───────────────────│
 │© TEAM EX BOT      
-│───────────────────│\n\n ` }, {quoted: xeonses});
+│───────────────────│\n\n ` }, {quoted: exbotses});
               await delay(1000 * 2) 
               process.exit(0)
         }
@@ -115,8 +115,8 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
             qr()
         }
     })
-    XeonBotInc.ev.on('creds.update', saveCreds)
-    XeonBotInc.ev.on("messages.upsert",  () => { })
+    EXbotInc.ev.on('creds.update', saveCreds)
+    EXbotInc.ev.on("messages.upsert",  () => { })
 }
 qr()
 
