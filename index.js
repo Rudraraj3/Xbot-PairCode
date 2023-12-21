@@ -1,5 +1,5 @@
-//copy code? pls put my github name as credit
-//🌹to those who copy without credit
+//copy code? pls put ©DGXeon as credit
+//🖕 to those who copy without credit
 const makeWASocket = require("@whiskeysockets/baileys").default
 const qrcode = require("qrcode-terminal")
 const fs = require('fs')
@@ -12,7 +12,7 @@ const readline = require("readline")
 const { parsePhoneNumber } = require("libphonenumber-js")
 
 
-let phoneNumber = "919497705819"
+let phoneNumber = "916909137213"
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
 const useMobile = process.argv.includes("--mobile")
@@ -59,40 +59,39 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919497705819")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +916909137213")))
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Enter your WhatsApp number👉 \nFor example: +919497705819 : `)))
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +916909137213 : `)))
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919497705819")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +916909137213")))
 
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Enter your WhatsApp number👉 \nFor example: +919497705819 : `)))
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number 😍\nFor example: +916909137213 : `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
             rl.close()
          }
       }
 
       setTimeout(async () => {
-         let code = await EXbotInc.requestPairingCode(phoneNumber)
+         let code = await XeonBotInc.requestPairingCode(phoneNumber)
          code = code?.match(/.{1,4}/g)?.join("-") || code
          console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
       }, 3000)
    }
 //------------------------------------------------------
-    EXbotInc.ev.on("connection.update",async  (s) => {
+    XeonBotInc.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             await delay(1000 * 10)
-            await EXbotInc.sendMessage(EXbotInc.user.id, { text: `🪀Support/Contact Developer\n\n\n⎆WhatsApp Gc: https://chat.whatsapp.com/BRzS286ZPPVCnStRKzPVkF\n\n⎆WhatsApp Pm: Wa.me/13072985194\n\n⎆Instagram: https://www.instagram.com/4.4.4.4.4.4.4444?igshid=NGVhN2U2NjQ0Yg==\n\n\n` });
-            let sessionEXbot = fs.readFileSync('./sessions/creds.json');
+            await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🪀Support/Contact Developer\n\n\n⎆Donate: https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg\n\n⎆YouTube: https://youtube.com/@DGXeon\n\n⎆Telegram Channel: https://t.me/xeonbotinc\n\n⎆Telegram Chat: https://t.me/+AYOyJflnt-AzNGFl\n\n⎆WhatsApp Gc1: https://chat.whatsapp.com/Kjm8rnDFcpb04gQNSTbW2d\n\n⎆WhatsApp Gc2: https://chat.whatsapp.com/EEOnU0V7dl9HF1mMFO8QWa\n\n⎆WhatsApp Gc3: https://chat.whatsapp.com/Dh0lD0Ee5hN1JMFXNqtxSG\n\n⎆WhatsApp Pm: Wa.me/916909137213\n\n⎆Instagram: https://instagram.com/unicorn_xeon13\n\n⎆GitHub: https://github.com/DGXeon/\n\n⎆Blog: https://dreamguyxeonfiles.blogspot.com/2022/05/bots%20whatsapp%20mods.html?m=1\n\n\n` });
+            let sessionXeon = fs.readFileSync('./sessions/exbot.json');
             await delay(1000 * 2) 
-             const xeonses = await  EXbotInc.sendMessage(EXbotInc.user.id, { document: sessionExbot, mimetype: `application/json`, fileName: `EXbot.json` })
-             await EXbotInc.sendMessage(EXbotInc.user.id, { text: `⚠️Do not share this file⚠️\n
-
+             const xeonses = await  XeonBotInc.sendMessage(XeonBotInc.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` })
+             await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `⚠️Do not share this file⚠️\n
 │───────────────────│
 │ hy dear 😽
 │───────────────────│
@@ -102,7 +101,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
 │wa.me/+13072985194
 │───────────────────│
 │© TEAM EX BOT      
-│───────────────────│\n\n ` }, {quoted: exbotses});
+│───────────────────│\n\n ` }, {quoted: xeonses});
               await delay(1000 * 2) 
               process.exit(0)
         }
@@ -115,8 +114,8 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./sessions`)
             qr()
         }
     })
-    EXbotInc.ev.on('creds.update', saveCreds)
-    EXbotInc.ev.on("messages.upsert",  () => { })
+    XeonBotInc.ev.on('creds.update', saveCreds)
+    XeonBotInc.ev.on("messages.upsert",  () => { })
 }
 qr()
 
