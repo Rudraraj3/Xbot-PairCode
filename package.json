@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/S-U-P-E-R-I-O-R/EXbot-PairCode.git"
+    "url": "git+https://github.com/Rudraraj3/Xbot-PairCode.git"
   },
-  "author": "S-U-P-E-R-I-O-R",
+  "author": "ANJAN",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -29,7 +29,7 @@
     "qrcode-terminal": "^0.12.0"
   },
   "bugs": {
-    "url": "https://github.com/S-U-P-E-R-I-O-R/EXbot-PairCode/issues"
+    "url": "https://github.com/Rudraraj3/Xbot-PairCode/issues"
   },
-  "homepage": "https://github.com/S-U-P-E-R-I-O-R/EXbot-PairCode#readme"
+  "homepage": "https://github.com/Rudraraj3/Xbot-PairCode#readme"
 }
